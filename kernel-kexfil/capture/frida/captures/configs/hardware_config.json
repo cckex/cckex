@@ -1,0 +1,64 @@
+{
+	"ws": {
+		"tls_keylog_file": "/home/natcho/Dokumente/Uni/i1Hiwi/cckex_Project/cckex/kernel-kexfil/capture/frida/captures/eval/current/cap.key",
+		"signal_key_file": "/home/natcho/Dokumente/Uni/i1Hiwi/cckex_Project/cckex/kernel-kexfil/capture/frida/captures/eval/current/cap.keylist",
+		"stats_file": "/home/natcho/Dokumente/Uni/i1Hiwi/cckex_Project/cckex/kernel-kexfil/capture/frida/captures/eval/current/stats_dump.csv"
+	},
+
+	"filter": {
+		"src_ip": "192.168.2.222",
+		"dst_ip": "",
+		"src_port": 0,
+		"dst_port": 0
+	},
+
+	"cc": {
+		"methods": [
+			{
+				"name": "iphdr_full_ttl",
+				"index": 0,
+				"active": false
+			},
+			{
+				"name": "iphdr_tos",
+				"index": 1,
+				"active": false
+			},
+			{
+				"name": "iphdr_ipflags",
+				"index": 2,
+				"active": false
+			},
+			{
+				"name": "iphdr_ipid",
+				"index": 3,
+				"active": false
+			},
+			{
+				"name": "iphdr_ipfrag",
+				"index": 4,
+				"active": false
+			},
+			{
+				"name": "tcphdr_urgent",
+				"index": 5,
+				"active": true
+			},
+			{
+				"name": "timing_ber",
+				"index": 6,
+				"active": false
+			},
+			{
+				"name": "msg_inj",
+				"index": 7,
+				"active": false
+			}
+		]
+	},
+
+	"crypto": {
+		"enabled": false,
+		"method": "rsa-keyex, gcm-enc"
+	}
+}

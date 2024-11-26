@@ -1,0 +1,6 @@
+config CCKEX_MOD
+	tristate "Covert Channel Key Exfiltration Framework LKM"
+	default m
+	depends on MODULES
+	help
+	  CCKex LKM

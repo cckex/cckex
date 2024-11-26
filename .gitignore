@@ -1,0 +1,10 @@
+**/out
+*.apk
+custom_config.json
+**/Telegram
+**/backup_apk
+**/__handlers__
+hardware
+android-gs-raviole*
+coredump
+wireshark-plugin/wireshark

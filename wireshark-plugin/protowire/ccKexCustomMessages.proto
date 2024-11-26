@@ -1,0 +1,26 @@
+/*
+ *	Custom ProtoBuf Messages for the ccKex Signal Dissector
+ */
+
+syntax = "proto2";
+
+package cckexsignal;
+
+// maybe https://github.com/signalapp/libsignal/blob/ee321f2697666fce90f793a876226cad830585b3/rust/protocol/src/proto/sealed_sender.proto ??
+message UnidentifiedSealedSenderMessageV1 {
+	bytes ephemeral_public	= 1;
+	bytes encrypted_static	= 2;
+	bytes encrypted_message = 3;
+}
+
+message EnvelopeInjection {
+	bytes cckex_envelope_injection = 20;
+}
+
+// TODO: is this correct?
+message UnidentifiedSealedSenderMessageV2 {
+	bytes ephemeral_public		= 1;
+	bytes encrypted_message_key = 2;
+	bytes authentication_tag	= 3;
+	bytes encrypted_message		= 4;
+}

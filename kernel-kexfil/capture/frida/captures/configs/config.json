@@ -1,0 +1,63 @@
+{
+	"ws": {
+		"tls_keylog_file": "/home/christian/Schreibtisch/ZITiS/kex-demos/cckex/kernel-kexfil/src/capture/eval/current/cap.key",
+		"signal_key_file": "/home/christian/Schreibtisch/ZITiS/kex-demos/cckex/kernel-kexfil/src/capture/eval/current/cap.keylist"
+	},
+
+	"filter": {
+		"src_ip": "10.0.2.16",
+		"dst_ip": "",
+		"src_port": 0,
+		"dst_port": 0
+	},
+
+	"cc": {
+		"methods": [
+			{
+				"name": "iphdr_full_ttl",
+				"index": 0,
+				"active": true
+			},
+			{
+				"name": "iphdr_tos",
+				"index": 1,
+				"active": false
+			},
+			{
+				"name": "iphdr_ipflags",
+				"index": 2,
+				"active": false
+			},
+			{
+				"name": "iphdr_ipid",
+				"index": 3,
+				"active": false
+			},
+			{
+				"name": "iphdr_ipfrag",
+				"index": 4,
+				"active": false
+			},
+			{
+				"name": "tcphdr_urgent",
+				"index": 5,
+				"active": false
+			},
+			{
+				"name": "timing_ber",
+				"index": 6,
+				"active": false
+			},
+			{
+				"name": "msg_inj",
+				"index": 7,
+				"active": false
+			}
+		]
+	},
+
+	"crypto": {
+		"enabled": false,
+		"method": "rsa-keyex, gcm-enc"
+	}
+}

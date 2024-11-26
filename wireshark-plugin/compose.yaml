@@ -1,0 +1,20 @@
+services:
+  cckex_wireshark:
+    image: cckex:latest
+    build:
+      context: .
+      target: wireshark_build_container
+      dockerfile: ./docker/Dockerfile
+      network: "host"
+    volumes:
+      - /tmp/.X11-unix:/tmp/X11-unix:ro
+      - /dev/dri:/dev/dri:ro
+      - ../.git:/cckex/.git:rw
+      - ./docker/init-entrypoint.sh:/init-entrypoint.sh:ro
+      - ./docker/build-entrypoint.sh:/build-entrypoint.sh:ro
+      - ./Makefile:/cckex/wireshark-plugin/Makefile:ro
+      - ./wireshark.patch:/cckex/wireshark-plugin/wireshark.patch
+      - ./src:/cckex/wireshark-plugin/src:rw
+      - ./protowire:/cckex/wireshark-plugin/protowire:ro
+      - ./wireshark:/cckex/wireshark-plugin/wireshark:rw
+

@@ -1,0 +1,25 @@
+services:
+  kernel-kex-demo:
+    image: kernel-kex:latest
+    build:
+      context: .
+      target: kernel-kex
+      dockerfile: ./docker/Dockerfile
+      network: "host"
+    devices:
+      - /dev/kvm
+    ports:
+      - "5902:5902"
+    network_mode: "bridge"
+    volumes:
+      - ./src:/src:rw
+      - ./share:/share:rw
+      - ./capture:/capture:rw
+      - ./android-data/:/root/.android:rw
+      - ./docker/recompile-entrypoint.sh:/recompile-entrypoint.sh:ro
+      - ./docker/setup-entrypoint.sh:/setup-entrypoint.sh:ro
+      - ./docker/demo-entrypoint.sh:/demo-entrypoint.sh:ro
+      - ./docker/aarch64-build-entrypoint.sh:/aarch64-build-entrypoint.sh:ro
+      - ./docker/setup-demo-env.sh:/setup-demo-env.sh:ro
+      - ./docker/setup-hw-entrypoint.sh:/setup-hw-entrypoint.sh:ro
+      - ./docker/recompile-hw-entrypoint.sh:/recompile-hw-entrypoint.sh:ro

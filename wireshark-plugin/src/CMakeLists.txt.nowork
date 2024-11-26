@@ -1,0 +1,9 @@
+
+
+target_sources(cckex PRIVATE
+	packet-ccKex.c
+	common.cc
+	common.h)
+
+add_subdirectory(message_dissection)
+add_subdirectory(extraction)

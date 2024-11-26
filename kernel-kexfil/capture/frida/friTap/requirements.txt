@@ -1,0 +1,7 @@
+frida>=15.0.0
+frida-tools>=10.0.0
+hexdump
+scapy
+watchdog
+click
+importlib-resources
